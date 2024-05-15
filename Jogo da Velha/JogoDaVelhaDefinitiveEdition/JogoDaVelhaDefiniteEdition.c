@@ -18,11 +18,11 @@ typedef struct {
 int main() {
 	setlocale(LC_ALL, "");
 	Player players[MAX_PLAYERS];
-	int xTurn, winnerX = 0, winner0 = 0, pair = 1, pairAux = 1, i, continue_ = 1, plays;
+	int xTurn, winnerX = 0, winner0 = 0, pair = 0, pairAux = 0, i, continue_ = 1, plays;
   	char ticTacToe[3][3];
   	char winner;
   	
-	  	for (i = 1; i < MAX_PLAYERS + 1; i++) {
+	  	for (i = 0; i < MAX_PLAYERS; i++) {
 	    	players[i].winner0 = 0;
 	    	players[i].winnerX = 0;
 	    	players[i].plays = 0;
@@ -38,13 +38,13 @@ int main() {
 		      	plays=0;
 		      	
 		      	while (winner == 'n') {  
-		        	printf("\n\n\tDupla %d\n", pair);
+		        	printf("\n\n\tDupla %d\n", pair+1);
 		        	xTurn = ticTacToeSwitchCase(ticTacToe, xTurn, pair, &plays);
 		        	winner = ticTacToeCheckWins(ticTacToe, winner);
 		        	if (plays >=9 && winner == 'n') break;
 		      	}
 		      	system("cls");
-		      	printf("\n\n    Dupla %d Resultados\n", pair);
+		      	printf("\n\n    Dupla %d Resultados\n", pair+1);
 		      	ticTacToePrint(ticTacToe);
 		      	continue_ = ticTacToeWinner(winner, continue_, &pair);
 	      		if (winner == 'X') players[pairAux].winnerX++;
@@ -59,11 +59,11 @@ int main() {
 	  	}
 	  	
 	  	printf("\n\tObrigado por jogar :)\n\n\n\t############\n\t###PLACAR###\n\t############\n\n");
-	  	pair=1;
+	  	pair=0;
 	  	
-	  	for (i = 1; i < MAX_PLAYERS + 1; i++) {  		
-	  			if (players[pair].winner0 == 0 && players[pair].winnerX == 0) printf("\n\t####################\n\t#\n\t# DUPLA %d SEM PONTOS\n\t####################\n\n", pair);
-				else printf("\n\t#################\n\t# DUPLA %d\n\t#\n\t# PONTOS DO X: %d\n\t# PONTOS DO 0: %d\n\t#################\n\n", pair, players[i].winnerX, players[i].winner0);
+	  	for (i = 0; i < MAX_PLAYERS; i++) {  		
+	  			if (players[pair].winner0 == 0 && players[pair].winnerX == 0) printf("\n\t####################\n\t#\n\t# DUPLA %d SEM PONTOS\n\t####################\n\n", pair+1);
+				else printf("\n\t#################\n\t# DUPLA %d\n\t#\n\t# PONTOS DO X: %d\n\t# PONTOS DO 0: %d\n\t#################\n\n", pair+1, players[i].winnerX, players[i].winner0);
 	    	pair++;
 	  	}
 	  	

@@ -10,16 +10,16 @@ int jogoDaVelhaSwitchCase(char jogoDaVelha[3][3], int vezX, int par, int * jogad
   		fflush(stdin);
   		switch (escolhaDeLinha) {
   			case 1:
-    			if (jogoDaVelha[0][0] == '1' && jogoDaVelha[0][0] != '\n') {
+    			if (jogoDaVelha[2][0] == '1') {
       				fflush(stdin);
       				if (vezX == 1) {
-        				jogoDaVelha[0][0] = 'X';
+        				jogoDaVelha[2][0] = 'X';
         				vezX = 0;
         				*jogadas+=1;
         				break;
       				}
       				if (vezX == 0) {
-        				jogoDaVelha[0][0] = '0';
+        				jogoDaVelha[2][0] = '0';
         				vezX = 1;
         				*jogadas+=1;
         				break;
@@ -28,20 +28,20 @@ int jogoDaVelhaSwitchCase(char jogoDaVelha[3][3], int vezX, int par, int * jogad
 				else {
       				printf("\nEste local ja foi jogado.\n");
       				system("pause");
-				    break;
+      				break;
     			}
     			
   			case 2:
-    			if (jogoDaVelha[0][1] == '2') {
+    			if (jogoDaVelha[2][1] == '2') {	
       				fflush(stdin);
       				if (vezX == 1) {
-        				jogoDaVelha[0][1] = 'X';
+        				jogoDaVelha[2][1] = 'X';
         				vezX = 0;
         				*jogadas+=1;
         				break;
       				}
       				if (vezX == 0) {
-        				jogoDaVelha[0][1] = '0';
+        				jogoDaVelha[2][1] = '0';
         				vezX = 1;
         				*jogadas+=1;
         				break;
@@ -54,16 +54,16 @@ int jogoDaVelhaSwitchCase(char jogoDaVelha[3][3], int vezX, int par, int * jogad
     			}
     			
   			case 3:
-    			if (jogoDaVelha[0][2] == '3') {
+    			if (jogoDaVelha[2][2] == '3') {
       				fflush(stdin);
       				if (vezX == 1) {
-        				jogoDaVelha[0][2] = 'X';
+        				jogoDaVelha[2][2] = 'X';
         				vezX = 0;
         				*jogadas+=1;
         				break;
       				}
       				if (vezX == 0) {
-        				jogoDaVelha[0][2] = '0';
+        				jogoDaVelha[2][2] = '0';
         				vezX = 1;
         				*jogadas+=1;
         				break;
@@ -142,16 +142,16 @@ int jogoDaVelhaSwitchCase(char jogoDaVelha[3][3], int vezX, int par, int * jogad
     			}
     			
   			case 7:
-    			if (jogoDaVelha[2][0] == '7') {
+    			if (jogoDaVelha[0][0] == '7' && jogoDaVelha[0][0] != '\n') {
       				fflush(stdin);
       				if (vezX == 1) {
-        				jogoDaVelha[2][0] = 'X';
+        				jogoDaVelha[0][0] = 'X';
         				vezX = 0;
         				*jogadas+=1;
         				break;
       				}
       				if (vezX == 0) {
-        				jogoDaVelha[2][0] = '0';
+        				jogoDaVelha[0][0] = '0';
         				vezX = 1;
         				*jogadas+=1;
         				break;
@@ -160,20 +160,20 @@ int jogoDaVelhaSwitchCase(char jogoDaVelha[3][3], int vezX, int par, int * jogad
 				else {
       				printf("\nEste local ja foi jogado.\n");
       				system("pause");
-      				break;
+				    break;
     			}
     			
   			case 8:
-    			if (jogoDaVelha[2][1] == '8') {	
+    			if (jogoDaVelha[0][1] == '8') {
       				fflush(stdin);
       				if (vezX == 1) {
-        				jogoDaVelha[2][1] = 'X';
+        				jogoDaVelha[0][1] = 'X';
         				vezX = 0;
         				*jogadas+=1;
         				break;
       				}
       				if (vezX == 0) {
-        				jogoDaVelha[2][1] = '0';
+        				jogoDaVelha[0][1] = '0';
         				vezX = 1;
         				*jogadas+=1;
         				break;
@@ -186,16 +186,16 @@ int jogoDaVelhaSwitchCase(char jogoDaVelha[3][3], int vezX, int par, int * jogad
     			}
     			
   			case 9:
-    			if (jogoDaVelha[2][2] == '9') {
+    			if (jogoDaVelha[0][2] == '9') {
       				fflush(stdin);
       				if (vezX == 1) {
-        				jogoDaVelha[2][2] = 'X';
+        				jogoDaVelha[0][2] = 'X';
         				vezX = 0;
         				*jogadas+=1;
         				break;
       				}
       				if (vezX == 0) {
-        				jogoDaVelha[2][2] = '0';
+        				jogoDaVelha[0][2] = '0';
         				vezX = 1;
         				*jogadas+=1;
         				break;

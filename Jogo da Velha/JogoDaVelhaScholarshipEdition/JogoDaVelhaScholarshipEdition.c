@@ -7,7 +7,7 @@
 #include "loopJogoDaVelhaTela.c"
 #include "jogoDaVelhaChecaVitoria.c"
 #include "jogoDaVelhaSwitchCase.c"
-#include "jogoDaVelhaVencedor.c"//Função nova
+#include "jogoDaVelhaVencedor.c"
 
 #define MAXIMO_DE_PLAYERS 4
 
@@ -18,11 +18,11 @@ typedef struct {
 int main() {
 	setlocale(LC_ALL, "portuguese");
 	Jogador jogadores[MAXIMO_DE_PLAYERS];
-	int vezX, vencedorX = 0, vencedor0 = 0, par = 1,parAux=1, i, continue_ = 1, jogadas;
+	int vezX, vencedorX = 0, vencedor0 = 0, par = 0,parAux=0, i, continue_ = 1, jogadas;
   	char jogoDaVelha[3][3];
   	char vencedor;
   	
-	  	for (i = 1; i < MAXIMO_DE_PLAYERS + 1; i++) {
+	  	for (i = 0; i < MAXIMO_DE_PLAYERS; i++) {
 	    	jogadores[i].vencedor0 = 0;
 	    	jogadores[i].vencedorX = 0;
 	    	jogadores[i].jogadas = 0;
@@ -37,15 +37,15 @@ int main() {
 		      	jogadas=0;
 		      	
 			      	while (vencedor == 'n') {
-			        	printf("\n\n\tDupla %d\n", par);
+			        	printf("\n\n\tDupla %d\n", par+1);
 			        	vezX = jogoDaVelhaSwitchCase(jogoDaVelha, vezX, par, &jogadas);
 			        	vencedor = jogoDaVelhaChecaVitoria(jogoDaVelha, vencedor);
 			        	if (jogadas >=9 && vencedor == 'n') break;
 			      	}
 			      	system("cls");
-			      	printf("\n\n    Dupla %d Resultados\n", par);
+			      	printf("\n\n    Dupla %d Resultados\n", par+1);
 			      	loopJogoDaVelhaTela(jogoDaVelha);
-			      	continue_=jogoDaVelhaVencedor(vencedor, continue_, &par);//Função nova
+			      	continue_=jogoDaVelhaVencedor(vencedor, continue_, &par);
 		      		if (vencedor == 'X') jogadores[parAux].vencedorX++;
 				  	if (vencedor == '0') jogadores[parAux].vencedor0++;
 				  	if(continue_==2) parAux++;
@@ -57,10 +57,10 @@ int main() {
 	    	}
 		}
 		printf("\n\tObrigado por jogar :)\n\n\n\t############\n\t###PLACAR###\n\t############\n\n");
-		par=1;
-		for (i = 1; i < MAXIMO_DE_PLAYERS + 1; i++) {
-		  		if (jogadores[par].vencedor0 == 0 && jogadores[par].vencedorX == 0) printf("\n\t#################\n\t# DUPLA %d SEM PONTOS!\n\t#\n\t#\n\t#################\n\n", par);
-				else printf("\n\t#################\n\t# DUPLA %d\n\t#\n\t# PONTOS DO X: %d\n\t# PONTOS DO 0: %d\n\t#################\n\n", par, jogadores[i].vencedorX, jogadores[i].vencedor0);
+		par=0;
+		for (i = 0; i < MAXIMO_DE_PLAYERS; i++) {
+		  		if (jogadores[par].vencedor0 == 0 && jogadores[par].vencedorX == 0) printf("\n\t#################\n\t# DUPLA %d SEM PONTOS!\n\t#\n\t#\n\t#################\n\n", par+1);
+				else printf("\n\t#################\n\t# DUPLA %d\n\t#\n\t# PONTOS DO X: %d\n\t# PONTOS DO 0: %d\n\t#################\n\n", par+1, jogadores[i].vencedorX, jogadores[i].vencedor0);
 		    	par++;
 		}
 		system("pause");

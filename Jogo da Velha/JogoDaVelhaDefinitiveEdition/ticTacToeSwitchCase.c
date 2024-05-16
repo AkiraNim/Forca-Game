@@ -9,16 +9,16 @@ int ticTacToeSwitchCase(char ticTacToe[3][3], int xTurn, int pair, int * plays) 
   		fflush(stdin);
   		switch (lineChoose) {
   			case 1:
-    			if (ticTacToe[0][0] == '1' && ticTacToe[0][0] != '\n') {
+    			if (ticTacToe[2][0] == '1') {
       				fflush(stdin);
       				if (xTurn == 1) {
-        				ticTacToe[0][0] = 'X';
+        				ticTacToe[2][0] = 'X';
         				xTurn = 0;
         				*plays+=1;
         				break;
       				}
       				if (xTurn == 0) {
-        				ticTacToe[0][0] = '0';
+        				ticTacToe[2][0] = '0';
         				xTurn = 1;
         				*plays+=1;
         				break;
@@ -27,24 +27,23 @@ int ticTacToeSwitchCase(char ticTacToe[3][3], int xTurn, int pair, int * plays) 
 				else {
       				printf("\nEste local ja foi jogado.\n");
       				system("pause");
-				    break;
+      				break;
     			}
   			case 2:
-    			if (ticTacToe[0][1] == '2') {
+    			if (ticTacToe[2][1] == '2') {
       				fflush(stdin);
       				if (xTurn == 1) {
-        				ticTacToe[0][1] = 'X';
+        				ticTacToe[2][1] = 'X';
         				xTurn = 0;
         				*plays+=1;
         				break;
       				}
       				if (xTurn == 0) {
-        				ticTacToe[0][1] = '0';
+        				ticTacToe[2][1] = '0';
         				xTurn = 1;
         				*plays+=1;
         				break;
       				}
-      				
     			}
 				else {
       				printf("\nEste local ja foi jogado.\n");
@@ -52,16 +51,16 @@ int ticTacToeSwitchCase(char ticTacToe[3][3], int xTurn, int pair, int * plays) 
       				break;
     			}
   			case 3:
-    			if (ticTacToe[0][2] == '3') {
+    			if (ticTacToe[2][2] == '3') {
       				fflush(stdin);
       				if (xTurn == 1) {
-        				ticTacToe[0][2] = 'X';
+        				ticTacToe[2][2] = 'X';
         				xTurn = 0;
         				*plays+=1;
         				break;
       				}
       				if (xTurn == 0) {
-        				ticTacToe[0][2] = '0';
+        				ticTacToe[2][2] = '0';
         				xTurn = 1;
         				*plays+=1;
         				break;
@@ -136,16 +135,16 @@ int ticTacToeSwitchCase(char ticTacToe[3][3], int xTurn, int pair, int * plays) 
       				break;
     			}
   			case 7:
-    			if (ticTacToe[2][0] == '7') {
+    			if (ticTacToe[0][0] == '7' && ticTacToe[0][0] != '\n') {
       				fflush(stdin);
       				if (xTurn == 1) {
-        				ticTacToe[2][0] = 'X';
+        				ticTacToe[0][0] = 'X';
         				xTurn = 0;
         				*plays+=1;
         				break;
       				}
       				if (xTurn == 0) {
-        				ticTacToe[2][0] = '0';
+        				ticTacToe[0][0] = '0';
         				xTurn = 1;
         				*plays+=1;
         				break;
@@ -154,23 +153,24 @@ int ticTacToeSwitchCase(char ticTacToe[3][3], int xTurn, int pair, int * plays) 
 				else {
       				printf("\nEste local ja foi jogado.\n");
       				system("pause");
-      				break;
+				    break;
     			}
   			case 8:
-    			if (ticTacToe[2][1] == '8') {
+    			if (ticTacToe[0][1] == '8') {
       				fflush(stdin);
       				if (xTurn == 1) {
-        				ticTacToe[2][1] = 'X';
+        				ticTacToe[0][1] = 'X';
         				xTurn = 0;
         				*plays+=1;
         				break;
       				}
       				if (xTurn == 0) {
-        				ticTacToe[2][1] = '0';
+        				ticTacToe[0][1] = '0';
         				xTurn = 1;
         				*plays+=1;
         				break;
       				}
+      				
     			}
 				else {
       				printf("\nEste local ja foi jogado.\n");
@@ -178,16 +178,16 @@ int ticTacToeSwitchCase(char ticTacToe[3][3], int xTurn, int pair, int * plays) 
       				break;
     			}
   			case 9:
-    			if (ticTacToe[2][2] == '9') {
+    			if (ticTacToe[0][2] == '9') {
       				fflush(stdin);
       				if (xTurn == 1) {
-        				ticTacToe[2][2] = 'X';
+        				ticTacToe[0][2] = 'X';
         				xTurn = 0;
         				*plays+=1;
         				break;
       				}
       				if (xTurn == 0) {
-        				ticTacToe[2][2] = '0';
+        				ticTacToe[0][2] = '0';
         				xTurn = 1;
         				*plays+=1;
         				break;

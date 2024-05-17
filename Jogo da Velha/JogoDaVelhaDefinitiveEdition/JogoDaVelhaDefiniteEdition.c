@@ -12,25 +12,25 @@
 #define MAX_PLAYERS 4
 
 typedef struct {
-	int winnerX, winner0, plays;
+	int winnerX, winnerO, plays;
 }Player;
 
 int main() {
 	setlocale(LC_ALL, "");
 	Player players[MAX_PLAYERS];
-	int xTurn, winnerX = 0, winner0 = 0, pair = 1, pairAux = 1, i, continue_ = 1, plays;
+	int xTurn, winnerX = 0, winnerO = 0, pair = 1, pairAux = 1, i, continue_ = 1, plays;
   	char ticTacToe[3][3];
   	char winner;
   	
-	  	for (i = 1; i < MAX_PLAYERS + 1; i++) {
-	    	players[i].winner0 = 0;
+	  	for (i = 1; i <= MAX_PLAYERS; i++) {
+	    	players[i].winnerO = 0;
 	    	players[i].winnerX = 0;
 	    	players[i].plays = 0;
 	  	}
 	  	
 	  	while (continue_ == 1 || continue_ == 2) {
 	      
-	  		if (pair < MAX_PLAYERS) {
+	  		if (pair <= MAX_PLAYERS) {
 		  		system("cls");
 		      	winner = 'n';
 		      	ticTacToeLoop(ticTacToe);
@@ -48,7 +48,7 @@ int main() {
 		      	ticTacToePrint(ticTacToe);
 		      	continue_ = ticTacToeWinner(winner, continue_, &pair);
 	      		if (winner == 'X') players[pairAux].winnerX++;
-			  	if (winner == '0') players[pairAux].winner0++;
+			  	if (winner == '0') players[pairAux].winnerO++;
 			  	if(continue_==2) pairAux++;
 		    }
 			else {
@@ -62,8 +62,8 @@ int main() {
 	  	pair=1;
 	  	
 	  	for (i = 1; i < MAX_PLAYERS + 1; i++) {  		
-	  			if (players[pair].winner0 == 0 && players[pair].winnerX == 0) printf("\n\t####################\n\t#\n\t# DUPLA %d SEM PONTOS\n\t####################\n\n", pair);
-				else printf("\n\t#################\n\t# DUPLA %d\n\t#\n\t# PONTOS DO X: %d\n\t# PONTOS DO 0: %d\n\t#################\n\n", pair, players[i].winnerX, players[i].winner0);
+	  			if (players[pair].winnerO == 0 && players[pair].winnerX == 0) printf("\n\t####################\n\t#\n\t# DUPLA %d SEM PONTOS\n\t####################\n\n", pair);
+				else printf("\n\t#################\n\t# DUPLA %d\n\t#\n\t# PONTOS DO X: %d\n\t# PONTOS DO 0: %d\n\t#################\n\n", pair, players[i].winnerX, players[i].winnerO);
 	    	pair++;
 	  	}
 	  	

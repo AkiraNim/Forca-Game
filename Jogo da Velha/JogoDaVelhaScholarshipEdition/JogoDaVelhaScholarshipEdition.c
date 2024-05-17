@@ -7,7 +7,7 @@
 #include "loopJogoDaVelhaTela.c"
 #include "jogoDaVelhaChecaVitoria.c"
 #include "jogoDaVelhaSwitchCase.c"
-#include "jogoDaVelhaVencedor.c"//Função nova
+#include "jogoDaVelhaVencedor.c"
 
 #define MAXIMO_DE_PLAYERS 4
 
@@ -45,7 +45,7 @@ int main() {
 			      	system("cls");
 			      	printf("\n\n    Dupla %d Resultados\n", par);
 			      	loopJogoDaVelhaTela(jogoDaVelha);
-			      	continue_=jogoDaVelhaVencedor(vencedor, continue_, &par);//Função nova
+			      	continue_=jogoDaVelhaVencedor(vencedor, continue_, &par);
 		      		if (vencedor == 'X') jogadores[parAux].vencedorX++;
 				  	if (vencedor == '0') jogadores[parAux].vencedorO++;
 				  	if(continue_==2) parAux++;
